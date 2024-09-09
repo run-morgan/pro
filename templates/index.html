@@ -6,12 +6,14 @@
         <title>플라스크</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
-    <body>
+    <body class="{{ 'android' if is_android else 'desktop' }}">
         <div class="container">
             <h1 id="head">Hello Flask</h1>
             <p>이것은 Flask로 만든 간단한 웹 페이지 입니다.</p>
-
+            {% if is_android %}
+            <p class="android-message">안드로이드에서 접속하셨네요!!</p>
+            {% endif %}
         </div>
-
     </body>
 </html>
+
