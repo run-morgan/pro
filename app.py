@@ -9,7 +9,7 @@ def index():
     is_ios = 'iPhone' in user_agent or 'iPad' in user_agent
     is_mobile = is_android or is_ios
     return render_template("index.html",
-                           is_mobile=is_mobile, is_android=is_android, is_ios=ios)
+                           is_mobile=is_mobile, is_android=is_android, is_ios=is_ios)
 
 if __name__ == '__main__':
     app.run(debug=True)
